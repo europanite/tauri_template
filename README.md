@@ -11,7 +11,7 @@
 
 A minimal template for building, validating, and releasing paid desktop applications continuously.
 
-This template uses **Tauri v2 + Vite + React + TypeScript**. It is not tied to Expo or a fixed `frontend/app` directory. For each new app, the intended workflow is to replace only the React screens in `src/` and the native commands in `src-tauri/src/`.
+This template uses **Tauri v2 + Vite + React + TypeScript**. 
 
 ## Goals
 
