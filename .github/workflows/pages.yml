@@ -27,13 +27,17 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 24
-          cache: npm
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+      - name: Build Vite app
+        run: npm run build
 
       - uses: actions/upload-pages-artifact@v5
         with:
@@ -48,5 +52,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
-
+        uses: actions/deploy-pages@v4
