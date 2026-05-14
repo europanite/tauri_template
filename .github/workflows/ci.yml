@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: service-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Jest on Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        working-directory: frontend/app
+        run: npm install
+
+      - name: Type check
+        working-directory: frontend/app
+        run: npx tsc --noEmit
+
+      - name: Run Jest
+        working-directory: frontend/app
+        run: npm test -- --ci --runInBand --coverage --verbose
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-node${{ matrix.node }}
+          path: frontend/app/coverage
+          if-no-files-found: warn
+
+  web-export-smoke:
+    name: Expo web export
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        working-directory: frontend/app
+        run: npm install
+
+      - name: Build
+        working-directory: frontend/app
+        run: npx expo export -p web
+
+      - name: Upload dist artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: expo-web-dist
+          path: frontend/app/dist
+          if-no-files-found: error
