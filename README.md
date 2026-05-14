@@ -43,8 +43,8 @@ bash scripts/release-check.sh
 
 ```bash
 bash scripts/set-app-meta.sh \
-  "Anime Tag Vault" \
-  "com.example.anime-tag-vault" \
+  "tauri_template" \
+  "com.example.tauri_template" \
   "0.1.0"
 ```
 
