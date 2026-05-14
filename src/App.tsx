@@ -13,9 +13,9 @@ export default function App() {
     <main className="shell">
       <section className="card">
         <p className="eyebrow">Tauri v2 / React / Vite</p>
-        <h1>Continuous Release Template</h1>
+        <h1>Tauri Template</h1>
         <p className="lead">
-          Replace this screen with the first useful workflow of your paid desktop app.
+          description.
         </p>
         <div className="actions">
           <button type="button" onClick={checkNativeBridge}>
