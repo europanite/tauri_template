@@ -1,0 +1,10 @@
+title: "tauri_template"
+description: "tauri_template"
+baseurl: "/tauri_template"
+url: "https://europanite.github.io"
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+highlighter: rouge
