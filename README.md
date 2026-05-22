@@ -65,6 +65,15 @@ npm run check
 cargo test --manifest-path src-tauri/Cargo.toml
 ```
 
+```bash
+$env:Path = "C:\Program Files\nodejs;$env:USERPROFILE\.cargo\bin;$env:Path"
+
+cd C:\Users\miked\anime_tag_vault
+
+npm.cmd exec -- tauri info
+npm.cmd exec -- tauri build
+```
+
 ## Release
 
 Push a tag such as `v0.1.0` to create a GitHub Release draft and upload artifacts for each OS.

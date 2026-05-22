@@ -1,0 +1,12 @@
+Third Party Notices
+
+このファイルは販売用ZIPにそのまま入ります。
+使用している第三者コンポーネントを記載してください。
+
+例:
+- Tauri
+- React
+- Vite
+- npm packages
+- Rust crates
+- 使用したモデル・素材・アイコンなど
