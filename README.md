@@ -6,6 +6,7 @@
 [![ci](https://github.com/europanite/tauri_template/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/ci.yml)
 [![pages](https://github.com/europanite/tauri_template/actions/workflows/pages.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/pages.yml)
 [![tauri](https://github.com/europanite/tauri_template/actions/workflows/tauri.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/tauri.yml)
+[![Release Desktop Apps](https://github.com/europanite/tauri_template/actions/workflows/release-desktop.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/release-desktop.yml)
 
 !["image"](./assets/images/web_ui.png)
 
