@@ -8,14 +8,16 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "check": "tsc --noEmit && npm run tauri info",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "prepare:assets": "node scripts/vendor-mediapipe-assets.mjs && bash scripts/download-selfie-segmenter.sh"
   },
   "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.35",
     "@tauri-apps/api": "^2.0.0",
     "@vitejs/plugin-react": "^5.0.0",
-    "vite": "^7.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "vite": "^7.0.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.0.0",

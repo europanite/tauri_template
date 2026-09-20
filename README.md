@@ -10,7 +10,7 @@
 
 !["image"](./assets/images/web_ui.png)
 
-A minimal template for building, validating, and releasing paid desktop applications continuously.
+A Tauri Template Project for desktop applications.
 
 This template uses **Tauri v2 + Vite + React + TypeScript**. 
 
