@@ -6,6 +6,7 @@
 [![ci](https://github.com/europanite/tauri_template/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/ci.yml)
 [![pages](https://github.com/europanite/tauri_template/actions/workflows/pages.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/pages.yml)
 [![tauri](https://github.com/europanite/tauri_template/actions/workflows/tauri.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/tauri.yml)
+[![Release Desktop Apps](https://github.com/europanite/tauri_template/actions/workflows/release-desktop.yml/badge.svg)](https://github.com/europanite/tauri_template/actions/workflows/release-desktop.yml)
 
 !["image"](./assets/images/web_ui.png)
 
@@ -63,6 +64,15 @@ The standard validation workflow runs on `push` and `pull_request`.
 ```bash
 npm run check
 cargo test --manifest-path src-tauri/Cargo.toml
+```
+
+```bash
+$env:Path = "C:\Program Files\nodejs;$env:USERPROFILE\.cargo\bin;$env:Path"
+
+cd C:\Users\miked\anime_tag_vault
+
+npm.cmd exec -- tauri info
+npm.cmd exec -- tauri build
 ```
 
 ## Release
